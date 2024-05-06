@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\Api\V1;
+namespace App\Filters\Api\V1;
 
 use Illuminate\Http\Request;
 
-class CustomerQuery
+class CustomersFilter
 {
     protected $allowedParms = [
         'name' => ['eq'],

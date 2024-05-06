@@ -8,7 +8,7 @@ use App\Http\Requests\UpdateCustomerRequest;
 use App\Http\Resources\V1\CustomerCollection;
 use App\Http\Resources\V1\CustomerResource;
 use App\Models\Customer;
-use App\Services\Api\V1\CustomerQuery;
+use App\Filters\Api\V1\CustomersFilter;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -18,7 +18,7 @@ class CustomerController extends Controller
      */
     public function index(Request $request)
     {
-        $filter = new CustomerQuery();
+        $filter = new CustomersFilter();
         $queryItems = $filter->transform($request);    // (['column', 'operator', 'value'])
 
         if (count($queryItems) == 0) {
